@@ -6095,14 +6095,31 @@ window.addEventListener("load", () => {
 })();
 
 
-const style = document.createElement("style");
-style.innerHTML = `
-  [data-framer-name="Vintage car"] {
-    top: -710px !important;
-    transform: translate(-50%, 0px) !important;
+const inject = () => {
+  let style = document.getElementById("vintage-fix");
+
+  if (!style) {
+    style = document.createElement("style");
+    style.id = "vintage-fix";
+    document.head.appendChild(style);
   }
-`;
-document.head.appendChild(style);
+
+  style.innerHTML = `
+    @media (min-width: 810px) {
+      body [data-framer-name="Vintage car"] {
+        top: -710px !important;
+        transform: translate(-50%, 0px) !important;
+      }
+    }
+  `;
+};
+
+inject();
+
+new MutationObserver(inject).observe(document.body, {
+  childList: true,
+  subtree: true
+});
 
 </script>
 
