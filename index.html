@@ -6084,7 +6084,7 @@ window.addEventListener("load", () => {
   function updateWhatsApp() {
     const link = document.querySelector('a[data-framer-name="Section 2"]');
     if (link) {
-      link.href = "https://wa.me/919999999999";
+      link.href = "https://wa.me/919742544515";
     }
   }
 
@@ -6093,7 +6093,20 @@ window.addEventListener("load", () => {
   setTimeout(updateWhatsApp, 3000);
 
 })();
+
+
+const style = document.createElement("style");
+style.innerHTML = `
+  [data-framer-name="Vintage car"] {
+    top: -710px !important;
+    transform: translate(-50%, 0px) !important;
+  }
+`;
+document.head.appendChild(style);
+
 </script>
+
+
 
 
 
@@ -6541,18 +6554,21 @@ setInterval(() => {
           // 🔹 Update Date
           const date = card.querySelector('[data-framer-name="Date and day"] p');
           if (date) {
+            //date.style.fontWeight = "600";
             date.innerText = "Sunday, 3rd May 2026"; // 👉 change if needed
           }
 
           // 🔹 Update Venue
           const venue = card.querySelector('[data-framer-name="Venue"] p');
           if (venue) {
-            venue.innerText = "Maratha Mandir, Railway Over Bridge, Govaves, Belgaum"; // 👉 change this
+           // venue.style.fontWeight = "600";
+            venue.innerText = "Maratha Mandir,\n Railway Over Bridge,\n Govaves, Belgaum"; // 👉 change this
           }
 
           // 🔹 Update Time
           const time = card.querySelector('[data-framer-name="Time"] p');
           if (time) {
+           // time.style.fontWeight = "600";
             time.innerText = "7:00 PM"; // 👉 change this
           }
 
